@@ -1,0 +1,39 @@
+# https://taskfile.dev
+
+version: '3'
+
+tasks:
+  default:
+    desc: Show the available tasks in this Taskfile.
+    cmds:
+      - task --list-all
+    silent: true
+
+  strapi:dev:
+    desc: Start the development strapi backend server.
+    dir: backend
+    cmds:
+      - yarn
+      - yarn develop
+
+  strapi:build:
+    desc: Build the Strapi admin panel.
+    dir: backend
+    cmds:
+      - yarn
+      - yarn build
+
+  next:dev:
+    desc: Start the development next frontend server.
+    dir: frontend
+    cmds:
+      - yarn
+      - yarn dev
+
+  generate:types:
+    desc: Generate typescript types from Strapi content types
+    dir: backend
+    cmds:
+      - yarn
+      - yarn types
+
